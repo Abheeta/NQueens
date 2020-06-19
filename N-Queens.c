@@ -3,8 +3,10 @@
 #include<malloc.h>
 #include<time.h>
 
-int sols = 0;
+int sols = 0; //contains the number of solutions
 
+//This is a recursive function that adds one queen onto the board in each step and declares the board as a result once
+//all queens have been added.
 void nQueens (int n, int q, int cb[]) {
     int i, column, flag, n_placeholder;
     int x = (n+1)/2;
@@ -24,9 +26,7 @@ void nQueens (int n, int q, int cb[]) {
 
     else {
         n_placeholder = (q == 0) ? x : n;
-        // printf("%d\n", n_placeholder);
         for (column = 1; column <= n_placeholder; column++) {
-        // for (column = 1; column <= n; column++) {
             flag = 1;
 
             for (i = 1; i <= q; i++)
